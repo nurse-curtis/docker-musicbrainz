@@ -50,9 +50,6 @@ RUN \
 	perl-dbd-pg \
 	perl-db_file \
 	perl-net-ssleay \
-	postgresql \
-	postgresql-contrib \
-	postgresql-dev \
 	procps \
 	redis \
 	tar \
@@ -89,17 +86,6 @@ RUN \
  yarn install && \
  yarn cache clean && \
  ./script/compile_resources.sh && \
- echo "**** compile musicbrainz postgresql addons ****" && \
- git clone git://github.com/metabrainz/postgresql-musicbrainz-unaccent \
-	/tmp/postgresql-musicbrainz-unaccent && \
- cd /tmp/postgresql-musicbrainz-unaccent && \
-	make && \
-	make install && \
- git clone git://github.com/metabrainz/postgresql-musicbrainz-collate.git \
-	/tmp/postgresql-musicbrainz-collate && \
- cd /tmp/postgresql-musicbrainz-collate && \
-	make && \
-	make install && \
  echo "**** configure nginx ****" && \
  echo 'fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;' >> \
 	/etc/nginx/fastcgi_params && \
