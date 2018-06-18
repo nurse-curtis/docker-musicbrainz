@@ -40,7 +40,7 @@ echo "local   all    all    trust" >> "$PGDATA/pg_hba.conf"
 echo "host all  all    0.0.0.0/0  md5" >> "$PGDATA/pg_hba.conf"
 set_listen_addresses ''
 
-s6-setuidgid abc pg_ctl -D "$PGDATA" -o "-c autovacuum=off -c listen_addresses='localhost'" -w start
+# s6-setuidgid abc pg_ctl -D "$PGDATA" -o "-c autovacuum=off -c listen_addresses='localhost'" -w start
 
 s6-setuidgid abc createdb  >/dev/null 2>&1
 s6-setuidgid abc psql --command "ALTER USER abc WITH SUPERUSER PASSWORD 'abc';"  >/dev/null 2>&1
@@ -52,7 +52,7 @@ cd /app/musicbrainz || exit
 s6-setuidgid abc ./admin/InitDb.pl --createdb --import "$DUMP_DEST"/mbdump*.tar.bz2 --tmp-dir "$DUMP_DEST" --echo
 echo "INITIAL IMPORT IS COMPLETE, MOVING TO NEXT PHASE"
 
-s6-setuidgid abc pg_ctl -D "$PGDATA" -m fast -w stop
+# s6-setuidgid abc pg_ctl -D "$PGDATA" -m fast -w stop
 
 set_listen_addresses '*'
 sleep 1s
