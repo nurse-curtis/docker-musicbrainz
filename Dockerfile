@@ -51,7 +51,6 @@ RUN \
 	perl-db_file \
 	perl-net-ssleay \
 	procps \
-	redis \
 	tar \
 	wget \
 	yarn && \
