@@ -45,6 +45,7 @@ RUN \
 	nodejs \
 	patch \
 	logrotate \
+	postgresql \
 	perl \
 	perl-crypt-rijndael \
 	perl-dbd-pg \
