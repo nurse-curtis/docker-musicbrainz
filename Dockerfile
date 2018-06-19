@@ -46,6 +46,7 @@ RUN \
 	patch \
 	logrotate \
 	postgresql \
+        redis \
 	perl \
 	perl-crypt-rijndael \
 	perl-dbd-pg \
