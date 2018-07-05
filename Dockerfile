@@ -57,6 +57,7 @@ RUN \
 	redis \
 	tar \
 	wget \
+	rsync \
 	yarn && \
  echo "**** fetch musicbrainz and install perl and node packages ****" && \
  mkdir -p \
