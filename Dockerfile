@@ -58,6 +58,7 @@ RUN \
 	tar \
 	wget \
 	rsync \
+	openssh-client \
 	yarn && \
  echo "**** fetch musicbrainz and install perl and node packages ****" && \
  mkdir -p \
