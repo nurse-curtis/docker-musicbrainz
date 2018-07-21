@@ -51,6 +51,7 @@ RUN \
 	perl-dbd-pg \
 	perl-db_file \
 	perl-net-ssleay \
+	postgresql \
 	procps \
 	tar \
 	wget \
