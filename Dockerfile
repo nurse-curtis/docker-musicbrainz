@@ -52,6 +52,8 @@ RUN \
 	perl-db_file \
 	perl-net-ssleay \
 	postgresql \
+	postgresql-dev \
+	postgresql-client \
 	procps \
 	tar \
 	wget \
